@@ -7,7 +7,7 @@
 </p>
 
 <h1 align="center">
-  Github action which can make security check reports after the running [bandit](https://pypi.org/project/bandit/).
+  Github action which can make security check reports after the running bandit as artifacts.
 </h1>
 
 <p align="center">
