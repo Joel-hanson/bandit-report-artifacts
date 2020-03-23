@@ -1,0 +1,28 @@
+Run started:2020-03-23 16:29:20.899831
+
+Test results:
+>> Issue: [B602:subprocess_popen_with_shell_equals_true] subprocess call with shell=True seems safe, but may be changed in the future, consider rewriting without shell
+   Severity: Low   Confidence: High
+   Location: ./main.py:4
+   More Info: https://bandit.readthedocs.io/en/latest/plugins/b602_subprocess_popen_with_shell_equals_true.html
+3	
+4	self.process = subprocess.Popen('/bin/echo', shell=True)
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 3
+	Total lines skipped (#nosec): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0.0
+		Low: 1.0
+		Medium: 0.0
+		High: 0.0
+	Total issues (by confidence):
+		Undefined: 0.0
+		Low: 0.0
+		Medium: 0.0
+		High: 1.0
+Files skipped (0):
