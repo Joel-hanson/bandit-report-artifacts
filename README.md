@@ -1,7 +1,7 @@
-![Deployment](https://github.com/Joel-hanson/django-aws-eb-deploy/workflows/Deployment/badge.svg?branch=master)
+![Security check - Bandit](https://github.com/Joel-hanson/bandit-report-artifacts/workflows/Security%20check%20-%20Bandit/badge.svg)
 
 <p align="center">
-  <a href="https://github.com/marketplace/actions/elastic-beanstalk-django-deployment-action">
+  <a href="https://github.com/marketplace/actions/bandit-report-artifacts">
     <img width="150px" src="./assets/logo.png">
   </a>
 </p>
