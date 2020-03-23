@@ -1,5 +1,5 @@
 name: "Python security check using Bandit"
-description: "Github action to find common security issues in Python code."
+description: "Github action to find common security issues in Python code and get its report as a artifact."
 author: "Joel-hanson@github.com"
 
 inputs:
@@ -14,7 +14,7 @@ inputs:
     default: "."
 
   ignore_failure:
-    description: "This is ignore the failure and continue pass the check."
+    description: "This is to ignore the security failures and pass the check."
     required: false
     default: false
 
