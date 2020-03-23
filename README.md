@@ -14,7 +14,9 @@
   This <a href="https://github.com/features/actions">GitHub Action</a> will deploy your Django project to <a href="https://aws.amazon.com/elasticbeanstalk/">AWS Elastic beanstalk</a>.
 </p>
 
-
+<p align="center">
+  <img src="./assets/screenshot_new.png">
+</p>
 <p align="center">
   <img src="./assets/screenshot.png">
 </p>
