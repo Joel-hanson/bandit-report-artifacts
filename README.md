@@ -7,7 +7,7 @@
 </p>
 
 <h1 align="center">
-  Github action which can make security check reports after the running [bandit](https://pypi.org/project/bandit/).
+  Github action which can make security check reports after the running bandit as artifacts.
 </h1>
 
 <p align="center">
@@ -78,11 +78,12 @@ The `with` portion of the workflow **must** be configured before the action will
 
 One of the following deployment options must be configured.
 
-| Key            | Value Information                                                                                                                                                                                                                                                                                                                                                                                                                                              | Type             | Required | Default |
-| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | -------- |
+| Key                | Value Information                                                                                                                                                                                                                                                                                                                                     | Type   | Required | Default |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | -------- | -------- |
 | `PYTHON_VERSION`          | You should provide your python version.'                                                                                                                           | `with`           | **Yes**  | 3.6.10 |
 | `PROJECT_PATH` | To provide you python location at which this security check needed to be done.                                                                                                 | `with` | **No**  | "." |
 | `IGNORE_FAILURE` | This is to ignore the security failures and pass the check.                                                                                                 | `with` | **No**  | false |
+
 
 ---
 
