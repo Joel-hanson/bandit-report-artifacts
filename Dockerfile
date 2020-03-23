@@ -3,6 +3,7 @@ FROM ubuntu:18.04
 RUN apt-get update
 
 # RUN apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev git libpq-dev
+RUN apt-get install -y curl
 
 RUN curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
 
