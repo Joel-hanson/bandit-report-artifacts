@@ -1,9 +1,13 @@
 #!/bin/sh -l
 
-printenv
-pyenv install $INPUT_PYTHON_VERSION
-pyenv global $INPUT_PYTHON_VERSION
-pyenv rehash
+if $INPUT_PYTHON_VERSION; then
+    pyenv install $INPUT_PYTHON_VERSION
+    pyenv global $INPUT_PYTHON_VERSION
+    pyenv rehash
+else
+    echo "🔥🔥🔥🔥🔥No python version provided🔥🔥🔥🔥🔥🔥"
+    exit 1
+fi
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
