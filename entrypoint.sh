@@ -1,5 +1,6 @@
 #!/bin/sh -l
 
+printenv
 pyenv install $INPUT_PYTHON_VERSION
 pyenv global $INPUT_PYTHON_VERSION
 pyenv rehash
