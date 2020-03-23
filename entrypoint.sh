@@ -20,5 +20,9 @@ if [ $? -eq 0 ]; then
 else
     echo "🔥🔥🔥🔥Security check failed🔥🔥🔥🔥"
     cat $GITHUB_WORKSPACE/output/security_report.txt
-    exit 1
+    if $INPUT_IGNORE_FAILURE; then
+        exit 0
+    else
+        exit 1
+    fi
 fi
