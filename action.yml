@@ -14,7 +14,7 @@ inputs:
     default: "."
 
   ignore_failure:
-    description: "This is ignore the failure and continue pass the check."
+    description: "This is to ignore the security failures and pass the check."
     required: false
     default: false
 
