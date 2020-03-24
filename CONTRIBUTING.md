@@ -7,7 +7,7 @@ Hi there 👋 We are excited that you want to contribute a new workflow to this 
 Contributions to this project are [released](https://help.github.com/articles/github-terms-of-service/#6-contributions-under-repository-license) to the public under the [project's open source license](https://github.com/Joel-hanson/bandit-report-artifacts/blob/master/LICENSE).
 
 Please note that this project is released with a [Contributor Code of Conduct](
-https://github.com/Joel-hanson/.github/blob/master/CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+https://github.com/Joel-hanson/bandit-report-artifacts/blob/master/.github/CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
 
 Before merging a new workflow, the following requirements need to be met:
 
