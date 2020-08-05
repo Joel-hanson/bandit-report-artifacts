@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from annotation import bandit_annotations, run_bandit, bandit_run_check, bandit_error
+from main import bandit_annotations, run_bandit, bandit_run_check, bandit_error
 
 
 def test_errors():

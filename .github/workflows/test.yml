@@ -31,4 +31,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |-
-        DUMMY_ANNOTATION=true python annotation.py tests/canary.py LICENSE
+        DUMMY_ANNOTATION=true python main.py tests/canary.py LICENSE

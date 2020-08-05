@@ -1,4 +1,5 @@
-![Security check - Bandit](https://github.com/Joel-hanson/bandit-report-artifacts/workflows/Security%20check%20-%20Bandit/badge.svg)
+![Security check - Bandit](https://github.com/ioggstream/bandit-report
+-artifacts/workflows/Bandit%20checks/badge.svg)
 
 <p align="center">
   <a href="https://github.com/marketplace/actions/bandit-report-artifacts">
@@ -36,8 +37,7 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest, macos-latest ]
-        python-version: [ '3.6.10', '3.8.1' ]
-    name: Python ${{ matrix.python-version }} ${{ matrix.os }} 
+    name: Python ${{ matrix.os }} 
 
     steps:
     - uses: actions/checkout@v2
@@ -92,7 +92,6 @@ One of the following deployment options must be configured.
 
 | Key                | Value Information                                                                                                                                                                                                                                                                                                                                     | Type   | Required | Default |
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | -------- | -------- |
-| `PYTHON_VERSION`          | You should provide your python version.'                                                                                                                           | `with`           | **Yes**  | 3.6.10 |
 | `PROJECT_PATH` | To provide you python location at which this security check needed to be done.                                                                                                 | `with` | **No**  | "." |
 | `IGNORE_FAILURE` | This is to ignore the security failures and pass the check.                                                                                                 | `with` | **No**  | false |
 
