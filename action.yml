@@ -6,11 +6,6 @@ description: "Github action to find common security issues in Python code and ge
 author: "robipolli@gmail.com"
 
 inputs:
-  python_version:
-    description: "Version range or exact version of a Python version to use, using SemVer's version range syntax."
-    default: "3.7"
-    required: true
-
   project_path:
     description: "This is the path at which the your python project is located in you github repo."
     required: false
@@ -20,6 +15,13 @@ inputs:
     description: "This is to ignore the security failures and pass the check."
     required: false
     default: false
+
+  repo_token:
+    required: true
+    description: |
+      The GitHub App installation access token.
+      [Learn more about `GITHUB_TOKEN`](https://help.github.com/en/actions/configuring-and-managing-workflows/authenticating-with-the-github_token#about-the-github_token-secret)
+    default: ${{ github.token }}
 
 runs:
   using: "docker"

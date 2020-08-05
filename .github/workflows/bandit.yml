@@ -25,7 +25,6 @@ jobs:
     - name: python-bandit with code annotations
       uses: ioggstream/bandit-report-artifacts@v0.0.1
       with:
-        # Version range or exact version of a Python version to use, using SemVer's version range syntax.
-        python_version:  3.7.1
         # This is the path at which the your python project is located in you github repo.
         project_path: main.py
+
