@@ -21,7 +21,7 @@ touch $GITHUB_WORKSPACE/output/security_report.txt
 bandit -r $INPUT_PROJECT_PATH -o $GITHUB_WORKSPACE/output/security_report.txt -f 'txt'
 BANDIT_STATUS="$?"
 
-python annotations.py -r $INPUT_PROJECT_PATH
+python annotation.py -r $INPUT_PROJECT_PATH
 
 if [ $BANDIT_STATUS -eq 0 ]; then
     echo "🔥🔥🔥🔥Security check passed🔥🔥🔥🔥"
