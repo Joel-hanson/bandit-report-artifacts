@@ -1,7 +1,7 @@
 #
 # Forked from  Joel-hanson/bandit-report-artifacts
 #
-name: "Python security check using Bandit"
+name: "python-bandit with code annotations"
 description: "Github action to find common security issues in Python code and get its report as a artifact."
 author: "robipolli@gmail.com"
 

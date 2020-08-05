@@ -11,7 +11,9 @@
 </h1>
 
 <p align="center">
-  This <a href="https://github.com/features/actions">GitHub Action</a> will deploy your Django project to <a href="https://aws.amazon.com/elasticbeanstalk/">AWS Elastic beanstalk</a>.
+  This <a href="https://github.com/features/actions">GitHub Action</a> runs
+   bandit checks on your code and annotates the interested lines with the
+    issues.
 </p>
 
 <p align="center">
@@ -34,7 +36,7 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest, macos-latest ]
-        python-version: [ '2.7.17', '3.6.10' ]
+        python-version: [ '3.6.10', '3.8.1' ]
     name: Python ${{ matrix.python-version }} ${{ matrix.os }} 
 
     steps:
@@ -58,10 +60,15 @@ jobs:
 
 ### Getting Started :airplane:
 
-You can include the action in your workflow to trigger on any event that [GitHub actions supports](https://help.github.com/en/articles/events-that-trigger-workflows). If the remote branch that you wish to deploy to doesn't already exist the action will create it for you. Your workflow will also need to include the `actions/checkout` step before this workflow runs in order for the deployment to work.
+You can include the action in your workflow to trigger on any event that
+ [GitHub actions supports](https://help.github.com/en/articles/events-that-trigger-workflows). 
+ If the remote branch that you wish to deploy to doesn't already exist the action will create it for you. 
+ Your workflow will also need to include the `actions/checkout` step before this workflow runs 
+ in order for the deployment to work.
 
 
-If you'd like to make it so the workflow only triggers on push events to specific branches then you can modify the `on` section.
+If you'd like to make it so the workflow only triggers on push events
+ to specific branches then you can modify the `on` section.
 
 ```yml
 on:
@@ -72,7 +79,12 @@ on:
 
 ### Configuration 📁
 
-The `with` portion of the workflow **must** be configured before the action will work. You can add these in the `with` section found in the examples above. Any `secrets` must be referenced using the bracket syntax and stored in the GitHub repositories `Settings/Secrets` menu. You can learn more about setting environment variables with GitHub actions [here](https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsenv).
+The `with` portion of the workflow **must** be configured before the action will work.
+ You can add these in the `with` section found in the examples above. 
+ Any `secrets` must be referenced using the bracket syntax and stored 
+ in the GitHub repositories `Settings/Secrets` menu. 
+ You can learn more about setting environment variables 
+ with GitHub actions [here](https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsenv).
 
 #### Required Setup
 
@@ -90,11 +102,13 @@ One of the following deployment options must be configured.
 
 ### Artifacts 📁
 
-You can get the bandit security checks reports for you python project. [learn more about artifacts](https://help.github.com/en/actions/configuring-and-managing-workflows/persisting-workflow-data-using-artifacts).
+You can get the bandit security checks reports for you python project.
+[learn more about artifacts](https://help.github.com/en/actions/configuring-and-managing-workflows/persisting-workflow-data-using-artifacts).
 
 #### Bandit report (security checks report) 👮‍♂️
 
-The following is an bandit report for a django project. [learn more about bandit](https://pypi.org/project/bandit/).
+The following is an bandit report for a django project. 
+[learn more about bandit](https://pypi.org/project/bandit/).
 
 ```txt
 Run started:2020-03-22 18:12:42.386731
@@ -132,6 +146,7 @@ Run metrics:
 		High: 0.0
 Files skipped (0):
 ```
+
 This can be achieved by add the following to your job
 
 ```yml
@@ -145,6 +160,11 @@ This can be achieved by add the following to your job
 
 ### License 👨🏻‍💻
 
-The Dockerfile and associated scripts and documentation in this project are released under the [MIT License](LICENSE).
+The Dockerfile and associated scripts and documentation in this project 
+are released under the [MIT License](LICENSE).
 
-Container images built with this project include third party materials. As with all Docker images, these likely also contain other software which may be under other licenses. It is the image user's responsibility to ensure that any use of this image complies with any relevant licenses for all software contained within.
+Container images built with this project include third party materials. 
+As with all Docker images, these likely also contain other software which 
+may be under other licenses. It is the image user's responsibility to ensure
+that any use of this image complies with any relevant licenses for all
+software contained within.
