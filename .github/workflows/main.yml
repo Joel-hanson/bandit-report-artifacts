@@ -7,23 +7,28 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [ ubuntu-latest, macos-latest ]
-        python-version: [ '2.7.17', '3.6.10' ]
-    name: Python ${{ matrix.python-version }} ${{ matrix.os }} 
+        os: [ ubuntu-latest ]
+        python-version: [ '3.7' ]
+    name: Python ${{ matrix.python-version }} ${{ matrix.os }}
 
     steps:
     - uses: actions/checkout@v2
 
-    - name: Security check - Bandit
-      uses: ./
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
       with:
-        python_version: ${{ matrix.python-version }}
-        project_path: .
-        ignore_failure: true
+        python-version: ${{ matrix.python-version }}
 
-    - name: Security check report artifacts
-      uses: actions/upload-artifact@v1
-      # if: failure()
-      with:
-        name: Security report
-        path: output/security_report.txt
+    - name: Install
+      run: |-
+        python --version
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt pytest
+
+        PYTHONPATH=. pytest tests
+
+    - name: Test canary
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |-
+        DUMMY_ANNOTATION=true python annotation.py tests/canary.py LICENSE

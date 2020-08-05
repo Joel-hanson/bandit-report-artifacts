@@ -1,11 +1,14 @@
+#
+# Forked from  Joel-hanson/bandit-report-artifacts
+#
 name: "Python security check using Bandit"
 description: "Github action to find common security issues in Python code and get its report as a artifact."
-author: "Joel-hanson@github.com"
+author: "robipolli@gmail.com"
 
 inputs:
   python_version:
     description: "Version range or exact version of a Python version to use, using SemVer's version range syntax."
-    default: "3.6.10"
+    default: "3.7"
     required: true
 
   project_path:

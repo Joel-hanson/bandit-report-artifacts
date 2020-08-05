@@ -1,0 +1,102 @@
+{
+  "errors": [
+    {
+      "filename": "LICENSE",
+      "reason": "syntax error while parsing AST from file"
+    }
+  ],
+  "generated_at": "2020-08-04T17:02:21Z",
+  "metrics": {
+    "LICENSE": {
+      "loc": 17,
+      "nosec": 0
+    },
+    "_totals": {
+      "CONFIDENCE.HIGH": 3.0,
+      "CONFIDENCE.LOW": 0.0,
+      "CONFIDENCE.MEDIUM": 1.0,
+      "CONFIDENCE.UNDEFINED": 0.0,
+      "SEVERITY.HIGH": 0.0,
+      "SEVERITY.LOW": 3.0,
+      "SEVERITY.MEDIUM": 1.0,
+      "SEVERITY.UNDEFINED": 0.0,
+      "loc": 25,
+      "nosec": 0
+    },
+    "tests/canary.py": {
+      "CONFIDENCE.HIGH": 3.0,
+      "CONFIDENCE.LOW": 0.0,
+      "CONFIDENCE.MEDIUM": 1.0,
+      "CONFIDENCE.UNDEFINED": 0.0,
+      "SEVERITY.HIGH": 0.0,
+      "SEVERITY.LOW": 3.0,
+      "SEVERITY.MEDIUM": 1.0,
+      "SEVERITY.UNDEFINED": 0.0,
+      "loc": 8,
+      "nosec": 0
+    }
+  },
+  "results": [
+    {
+      "code": "2 \n3 print(randint(0, 10))\n4 \n",
+      "filename": "tests/canary.py",
+      "issue_confidence": "HIGH",
+      "issue_severity": "LOW",
+      "issue_text": "Standard pseudo-random generators are not suitable for security/cryptographic purposes.",
+      "line_number": 3,
+      "line_range": [
+        3
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b311-random",
+      "test_id": "B311",
+      "test_name": "blacklist"
+    },
+    {
+      "code": "4 \n5 password = \"secret\"\n6 \n7 a = eval(\"\"\"\n",
+      "filename": "tests/canary.py",
+      "issue_confidence": "MEDIUM",
+      "issue_severity": "LOW",
+      "issue_text": "Possible hardcoded password: 'secret'",
+      "line_number": 5,
+      "line_range": [
+        5,
+        6
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/latest/plugins/b105_hardcoded_password_string.html",
+      "test_id": "B105",
+      "test_name": "hardcoded_password_string"
+    },
+    {
+      "code": "6 \n7 a = eval(\"\"\"\n8     3 + 2 \\\n9     + randint(0, 10)\n10 \n11 \"\"\")\n12 assert a\n",
+      "filename": "tests/canary.py",
+      "issue_confidence": "HIGH",
+      "issue_severity": "MEDIUM",
+      "issue_text": "Use of possibly insecure function - consider using safer ast.literal_eval.",
+      "line_number": 7,
+      "line_range": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/latest/blacklists/blacklist_calls.html#b307-eval",
+      "test_id": "B307",
+      "test_name": "blacklist"
+    },
+    {
+      "code": "11 \"\"\")\n12 assert a\n",
+      "filename": "tests/canary.py",
+      "issue_confidence": "HIGH",
+      "issue_severity": "LOW",
+      "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+      "line_number": 12,
+      "line_range": [
+        12
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html",
+      "test_id": "B101",
+      "test_name": "assert_used"
+    }
+  ]
+}
