@@ -3,6 +3,10 @@
     {
       "filename": "LICENSE",
       "reason": "syntax error while parsing AST from file"
+    },
+    {
+      "filename": "tests/py2.py",
+      "reason": "syntax error while parsing AST from file"
     }
   ],
   "generated_at": "2020-08-04T17:02:21Z",

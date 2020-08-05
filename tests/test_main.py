@@ -7,6 +7,14 @@ def test_errors():
     results = json.loads(Path("tests/bandit.error.json").read_text())
     errors = [bandit_error(error) for error in results["errors"]]
     assert errors[0]["path"] == "LICENSE"
+    assert errors[1] == {
+        "path": "tests/py2.py",
+        "start_line": 2,
+        "end_line": 2,
+        "annotation_level": "failure",
+        "title": "invalid syntax",
+        "message": "syntax error while parsing AST from file",
+    }
 
 
 def test_annotations():

@@ -62,12 +62,26 @@ def bandit_annotation(result):
 
 
 def bandit_error(error):
+    from ast import parse
+
+    title = "Error processing file (not a python file?)"
+    start_line, end_line = 1, 1
+
+    try:
+        parse(Path(error["filename"]).read_text())
+    except SyntaxError as e:
+        title, (_, start_line, start_column, line) = e.args
+        end_line = start_line
+    except Exception as e:  # nosec - I really want to ignore further exceptions here.
+        # Use default error values
+        pass
+
     return dict(
         path=error["filename"],
-        start_line=1,
-        end_line=1,
+        start_line=start_line,
+        end_line=end_line,
         annotation_level="failure",
-        title="Error processing file (not a python file?)",
+        title=title,
         message=error["reason"],
     )
 
