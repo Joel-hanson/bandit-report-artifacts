@@ -40,8 +40,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Security check - Bandit
-      uses: ./
+    - name: Python security check using Bandit
+      uses: Joel-hanson/bandit-report-artifacts@V1
       with:
         python_version: ${{ matrix.python-version }}
         project_path: .
